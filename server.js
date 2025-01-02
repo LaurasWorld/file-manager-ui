@@ -22,7 +22,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/view', express.static(BASE_DIRECTORY));
 
 // Helper function: Load users from file
 function loadUsers() {
